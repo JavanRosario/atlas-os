@@ -1,0 +1,89 @@
+# ==============================================================================
+# 📦 ARQUIVOS DE COMPILAÇÃO E ARTEFATOS (Maven / Gradle / Ant)
+# ==============================================================================
+# Ignora logs, relatórios e documentações geradas automaticamente
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+build/
+bin/
+out/
+
+# Ignora dependências baixadas localmente (se houver)
+.gradle/
+/node_modules/
+
+# Mantém pastas 'target' e 'build' se elas estiverem dentro das pastas de código fonte (casos raros/específicos)
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Ignora os arquivos de pacotes finais gerados para deploy
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# ==============================================================================
+# 🛠️ CONFIGURAÇÕES DE IDEs E EDITORES
+# ==============================================================================
+
+### STS / Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+*.code-workspace
+
+# ==============================================================================
+# 🔒 SEGURANÇA E CONFIGURAÇÕES LOCAIS (Essencial)
+# ==============================================================================
+# Nunca envie credenciais, chaves ou configurações de ambiente para o Git
+.env
+.env.local
+.env.*.local
+*.properties.local
+*.yml.local
+*.yaml.local
+
+# ==============================================================================
+# 💻 SISTEMA OPERACIONAL
+# ==============================================================================
+# Arquivos inúteis gerados pelo Windows e macOS
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ==============================================================================
+# 📝 LOGS E TEMPORÁRIOS
+# ==============================================================================
+*.log
+*.tmp
+*.bak
+.crash
