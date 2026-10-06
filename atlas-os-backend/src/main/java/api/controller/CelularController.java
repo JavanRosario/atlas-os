@@ -2,7 +2,7 @@ package api.controller;
 
 import api.dto.CelularDto;
 import api.literal.ApiBasePaths;
-import api.mapper.CelularReponseMapper;
+import api.mapper.celularMapper.CelularResponseMapper;
 import domain.service.CelularService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,23 +14,21 @@ import java.util.List;
 @RequestMapping(ApiBasePaths.CELULAR_ROOT)
 @RestController
 public class CelularController {
-
     private final CelularService celularService;
-    private final CelularReponseMapper celularReponseMapper;
+    private final CelularResponseMapper celularResponseMapper;
 
-    public CelularController(CelularService celularService, CelularReponseMapper celularReponseMapper) {
+    public CelularController(CelularService celularService, CelularResponseMapper celularResponseMapper) {
         this.celularService = celularService;
-        this.celularReponseMapper = celularReponseMapper;
+        this.celularResponseMapper = celularResponseMapper;
     }
 
     @GetMapping
     public List<CelularDto> listar() {
-        return celularReponseMapper.toDtoList(celularService.listar());
+        return celularResponseMapper.dtoList(celularService.listar());
     }
 
-    @GetMapping("{celularId}")
-    public CelularDto listarPorId(@PathVariable Long celularId){
-        return celularReponseMapper.toDto(celularService.buscaOuFalha(celularId));
+    @GetMapping("{id}")
+    public CelularDto listarId(@PathVariable Long id) {
+        return celularResponseMapper.toDto(celularService.buscaOuFalha(id));
     }
-
 }
