@@ -1,4 +1,4 @@
-package domain.exception;
+package com.atlasos.atlas_os_backend.domain.exception;
 
 public class CelularNaoEncontradoException extends RuntimeException {
 

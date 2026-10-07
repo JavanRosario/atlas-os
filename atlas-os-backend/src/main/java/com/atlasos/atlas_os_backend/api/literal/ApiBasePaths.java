@@ -1,4 +1,4 @@
-package api.literal;
+package com.atlasos.atlas_os_backend.api.literal;
 
 public class ApiBasePaths {
     private static final String VERSAO = "1";

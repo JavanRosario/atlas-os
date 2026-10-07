@@ -1,8 +1,8 @@
-package domain.service;
+package com.atlasos.atlas_os_backend.domain.service;
 
-import domain.exception.CelularNaoEncontradoException;
-import domain.model.Celular;
-import domain.repository.CelularRepository;
+import com.atlasos.atlas_os_backend.domain.exception.CelularNaoEncontradoException;
+import com.atlasos.atlas_os_backend.domain.model.Celular;
+import com.atlasos.atlas_os_backend.domain.repository.CelularRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

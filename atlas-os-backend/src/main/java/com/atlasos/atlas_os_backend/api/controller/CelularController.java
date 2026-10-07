@@ -1,9 +1,9 @@
-package api.controller;
+package com.atlasos.atlas_os_backend.api.controller;
 
-import api.dto.CelularDto;
-import api.literal.ApiBasePaths;
-import api.mapper.celularMapper.CelularResponseMapper;
-import domain.service.CelularService;
+import com.atlasos.atlas_os_backend.api.dto.CelularDto;
+import com.atlasos.atlas_os_backend.api.literal.ApiBasePaths;
+import com.atlasos.atlas_os_backend.api.mapper.celularMapper.CelularResponseMapper;
+import com.atlasos.atlas_os_backend.domain.service.CelularService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,7 +27,7 @@ public class CelularController {
         return celularResponseMapper.dtoList(celularService.listar());
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public CelularDto listarId(@PathVariable Long id) {
         return celularResponseMapper.toDto(celularService.buscaOuFalha(id));
     }

@@ -1,6 +1,6 @@
 create table tb_dados_celular
 (
-    cd_celular                integer generated always as identity primary key,
+    cd_celular                bigint generated always as identity primary key,
     nm_modelo                 varchar(255) not null,
     nm_fabricante             varchar(255) not null,
     dt_lancamento             date         not null,

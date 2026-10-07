@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="AtlasOsBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="atlas-os-backend" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.atlasos.atlas_os_backend.AtlasOsBackendApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
