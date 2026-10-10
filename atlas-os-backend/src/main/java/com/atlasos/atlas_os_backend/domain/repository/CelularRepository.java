@@ -1,11 +1,14 @@
 package com.atlasos.atlas_os_backend.domain.repository;
 
 import com.atlasos.atlas_os_backend.domain.model.Celular;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
-public interface CelularRepository extends JpaRepository<Celular, Long> {
+import java.util.List;
 
-    Page<Celular> findByFabricanteOrderByDataLancamentoAsc(Pageable pageable);
+public interface CelularRepository extends JpaRepository<Celular, Long>, JpaSpecificationExecutor<Celular> {
+
+    List<Celular> findByFabricanteOrderByDataLancamentoAsc(String fabricante);
+
+
 }
