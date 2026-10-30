@@ -1,0 +1,64 @@
+<div class="container-sistema">
+    <div class="topo-pagina">
+        <h2>📱 Catálogo de Celulares Cadastrados</h2>
+        <span class="contador">Total: {{ listaDeCelulares.length }}</span>
+    </div>
+
+    <table class="tabela-gestao">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Aparelho</th>
+                <th>Hardware (RAM / Armaz. / CPU)</th>
+                <th>Tela / Bateria</th>
+                <th>Recursos (5G / Wireless)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop mapeando exatamente a sua classe do Java -->
+            @for (celular of listaDeCelulares; track celular.id) {
+            <tr>
+                <td><strong>#{{ celular.id }}</strong></td>
+
+                <!-- Junta Fabricante e Modelo (ex: Samsung - Galaxy S23) -->
+                <td>
+                    <div class="info-principal">
+                        <span class="marca">{{ celular.fabricante }}</span>
+                        <span class="modelo">{{ celular.modelo }}</span>
+                    </div>
+                </td>
+
+                <!-- Junta Memória, Armazenamento e Processador -->
+                <td>
+                    <div>{{ celular.memoriaRam }}GB RAM / {{ celular.armazenamento }}GB</div>
+                    <small class="sub-texto">{{ celular.processador }}</small>
+                </td>
+
+                <!-- Junta Informações Técnicas de Tela e Bateria -->
+                <td>
+                    <div>{{ celular.tamanhoTela }}" ({{ celular.tecnologiaTela }})</div>
+                    <small class="sub-texto">{{ celular.tamanhoBateria }} mAh | {{ celular.conectorDeCarga }}</small>
+                </td>
+
+                <!-- Badges Dinâmicas baseadas nos Booleans do Java -->
+                <td>
+                    <div class="badges-container">
+                        @if (celular.tem5g) {
+                        <span class="badge badge g5">5G</span>
+                        }
+                        @if (celular.temCarregamentoSemFio) {
+                        <span class="badge badge-wireless">Wireless</span>
+                        }
+                    </div>
+                </td>
+            </tr>
+            } @empty {
+            <tr>
+                <td colspan="5" class="sem-dados">
+                    Nenhum celular encontrado. Verifique se o banco de dados está populado.
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
